@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 chat_id = 341299061
 
 def solution(p: float, x: np.array) -> tuple:
@@ -9,5 +8,5 @@ def solution(p: float, x: np.array) -> tuple:
     x=fun(x) 
     alpha = 1 - p
     loc = x.max()
-    return 0.017+loc/(1-alpha/2), \
-           0.017+loc/(alpha / 2)
+    return 0.017+loc/((1-alpha/2)**(1/len(x))), \
+           0.017+loc/((alpha / 2)**(1/len(x)))
